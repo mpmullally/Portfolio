@@ -63,6 +63,12 @@
   ga('send', 'pageview');
 
 </script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+function captchaSubmit(data) {
+		document.getElementById("footer-form").submit();
+}
+</script>
 	</head>
 
 	<body class="no-trans">
@@ -1680,7 +1686,8 @@
 										<textarea class="form-control" rows="8" id="message" placeholder="Message" name="message" required></textarea>
 										<i class="fa fa-pencil form-control-feedback"></i>
 									</div>
-									<input type="submit" value="Send" class="btn btn-default">
+									<input type="submit" value="Send" class="btn btn-default g-recaptcha" data-sitekey="6LcEwB0UAAAAAI0BltXDPa90y9YlSTio4cgbyCpk"
+									data-callback="captchaSubmit">
 								</form>
 							</div>
 						</div>
