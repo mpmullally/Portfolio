@@ -63,6 +63,12 @@
   ga('send', 'pageview');
 
 </script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+function captchaSubmit(data) {
+		document.getElementById("footer-form").submit();
+}
+</script>
 	</head>
 
 	<body class="no-trans">
@@ -1652,18 +1658,37 @@
 									<li><i class="fa fa-phone pr-10" style="color:#F00;"></i> (216) 548-3506 </li>
 									<li><i class="fa fa-envelope-o pr-10" style="color:#F00;"></i> michael.p.mullally@gmail.com</li>
 								</ul>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="footer-content">
 								<ul class="social-links">
-									<li class="facebook"><a target="_blank" href="https://www.facebook.com/michael.p.mullally"><i class="fa fa-facebook"></i></a></li>
+								  <li class="facebook"><a target="_blank" href="https://www.facebook.com/michael.p.mullally"><i class="fa fa-facebook"></i></a></li>
 									<li class="twitter"><a target="_blank" href="https://twitter.com/michaelmullally"><i class="fa fa-twitter"></i></a></li>
 									<li class="skype"><a target="_blank" href="http://www.skype.com/michael.p.mullally"><i class="fa fa-skype"></i></a></li>
 									<li class="linkedin"><a target="_blank" href="http://www.linkedin.com/in/michaelpmullally/en"><i class="fa fa-linkedin"></i></a></li>
 									<li class="vimeo"><a target="_blank" href="http://www.vimeo.com/michaelmullally"><i class="fa fa-vimeo-square"></i></a></li>
 									<li class="soundcloud"><a target="_blank" href="https://soundcloud.com/michael-p-mullally"><i class="fa fa-soundcloud"></i></a></li>
 								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="footer-content">
+								<form role="form" id="footer-form" action="mail.php" method="POST">
+									<div class="form-group has-feedback">
+										<label class="sr-only" for="name">Name</label>
+										<input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
+										<i class="fa fa-user form-control-feedback"></i>
+									</div>
+									<div class="form-group has-feedback">
+										<label class="sr-only" for="email">Email address</label>
+										<input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+										<i class="fa fa-envelope form-control-feedback"></i>
+									</div>
+									<div class="form-group has-feedback">
+										<label class="sr-only" for="message">Message</label>
+										<textarea class="form-control" rows="8" id="message" placeholder="Message" name="message" required></textarea>
+										<i class="fa fa-pencil form-control-feedback"></i>
+									</div>
+									<input type="submit" value="Send" class="btn btn-default g-recaptcha" data-sitekey="6LcEwB0UAAAAAI0BltXDPa90y9YlSTio4cgbyCpk"
+									data-callback="captchaSubmit">
+								</form>
 							</div>
 						</div>
 					</div>
